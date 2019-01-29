@@ -43,6 +43,7 @@ tasks:
       - [".zshenv", "zsh/zshenv"]
       - [".aliases", "zsh/aliases"]
       - [".local/share/fonts", "fonts"]
+      - [".local/share/backgrounds", "backgrounds"] 
       - [".config/ranger", "ranger"]
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
