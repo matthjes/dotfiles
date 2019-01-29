@@ -1,0 +1,7 @@
+# nvim -> vim
+alias vim='/usr/bin/nvim'
+
+# ls
+alias ls='ls --color=auto --group-directories-first'
+alias la='ls -lah'
+alias ll='ls -a'

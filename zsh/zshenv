@@ -1,0 +1,8 @@
+typeset -U path
+path=(
+  ~/bin
+  $path[@]
+)
+
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim

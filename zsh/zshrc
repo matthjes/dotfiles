@@ -1,0 +1,112 @@
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zhistory
+HISTSIZE=10000
+SAVEHIST=1000
+setopt autocd
+unsetopt beep
+bindkey -v
+# End of lines configured by zsh-newuser-install
+
+# The following lines were added by compinstall
+zstyle :compinstall filename $HOME/.zshrc
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
+#
+### Added by Zplugin's installer
+source $HOME/.zplugin/bin/zplugin.zsh
+autoload -Uz _zplugin
+(( ${+_comps} )) && _comps[zplugin]=_zplugin
+### End of Zplugin's installer chunk
+
+# autoload prompt theme system
+autoload -Uz promptinit
+promptinit
+
+# for enabling autocompletion of privileged environments in privileged 
+# commands (e.g. if you complete a command starting with sudo, completion 
+# scripts will also try to determine your completions with sudo) 
+zstyle ':completion::complete:*' gain-privileges 1
+
+### OPTIONS
+# autocorrect commands
+setopt correct_all
+
+# automatically list choices on ambiguous completion
+setopt auto_list
+
+# automatically use menu completion
+setopt auto_menu
+
+# move cursor to end if word had one match
+setopt always_to_end
+
+### PLUGINS
+# spaceship prompt
+zplugin load denysdovhan/spaceship-prompt
+spaceship_vi_mode_enable
+SPACESHIP_PROMPT_ORDER=(
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  node          # Node.js section
+  golang        # Go section
+  docker        # Docker section
+  exec_time     # Execution time
+  line_sep      # Line break
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
+
+# syntax highlighting
+zplugin load zdharma/fast-syntax-highlighting
+
+# auto suggestions
+zplugin load zsh-users/zsh-autosuggestions
+# use Ctrl-Space to accept suggestion
+bindkey '^ ' autosuggest-accept
+
+# history search
+zplugin load zsh-users/zsh-history-substring-search
+# bind keys for Vi mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# additional completions
+zplugin load zsh-users/zsh-completions
+
+### GENERAL BINDINGS
+bindkey -M viins 'jk' vi-cmd-mode
+
+### ALIASES
+source $HOME/.aliases
+
+### FUNCTIONS
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then
+    echo -ne '\e[1 q'
+
+  elif [[ ${KEYMAP} == main ]] ||
+       [[ ${KEYMAP} == viins ]] ||
+       [[ ${KEYMAP} = '' ]] ||
+       [[ $1 = 'beam' ]]; then
+    echo -ne '\e[5 q'
+  fi
+}
+zle -N zle-keymap-select
+
+# Use beam shape cursor on startup.
+echo -ne '\e[5 q'
+
+# Use beam shape cursor for each new prompt.
+preexec() {
+   echo -ne '\e[5 q'
+}

@@ -1,0 +1,63 @@
+### MACROS ###################################################################
+macros:
+  install:
+    prefix: ["sudo", "pacman", "-S", "--noconfirm", "--needed"]
+
+  clone:
+    deps: ["git"]
+    prefix: ["git", "clone"]
+
+### TASKS ####################################################################
+tasks:
+  ### Install common applications and configurations
+  common:
+    cmds:
+      - ["@install", 
+          "neovim", 
+          "python-neovim",
+          "rofi", 
+          "ranger", 
+          "zsh", 
+          "termite", 
+          "git",
+          "vlc",
+          "feh",
+          "firefox",
+          "python",
+          "python-pip",
+          "manjaro-pulse",
+          "pa-applet",
+          "yay"]
+
+      # change shell to zsh
+      - ["chsh", "-s", "/bin/zsh"]
+
+      # install zplugin
+      - ["wget", "-O/tmp/install.sh", "https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh"]
+      - ["sh", "/tmp/install.sh"]
+
+    links:
+      - [".config/nvim", "nvim"]
+      - [".gitconfig", "git/gitconfig"]
+      - [".zshrc", "zsh/zshrc"]
+      - [".zshenv", "zsh/zshenv"]
+      - [".aliases", "zsh/aliases"]
+      - [".local/share/fonts", "fonts"]
+      - [".config/ranger", "ranger"]
+      - [".config/termite", "termite"]
+      - [".config/rofi", "rofi"]
+
+  ### Default
+  default:
+    deps: ["common"]
+
+  ### Desktop
+  desktop:
+    deps: ["common"]
+    links: 
+      - [".config/i3/config", "i3/config_desktop"]
+      - [".config/i3status/config", "i3status/config_desktop"]
+    templates:
+      - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_desktop.cfg"]
+      - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_desktop.cfg"]
+    
