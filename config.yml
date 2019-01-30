@@ -58,6 +58,7 @@ tasks:
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
+      - [".config/pulse/default.pa", "pulse/default.pa"]
     templates:
       - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_desktop.cfg"]
       - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_desktop.cfg"]

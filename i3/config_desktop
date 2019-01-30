@@ -34,7 +34,7 @@ bindsym $mod+semicolon exec --no-startup-id "rofi -modi window,drun,run -show wi
 ################################################################################################
 
 exec --no-startup-id pulseaudio
-exec --no-startup-id pa-applet
+exec --no-startup-id pasystray
 bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
