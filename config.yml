@@ -27,7 +27,8 @@ tasks:
           "python-pip",
           "manjaro-pulse",
           "pa-applet",
-          "yay"]
+          "yay",
+          "arandr"]
 
       # change shell to zsh
       - ["chsh", "-s", "/bin/zsh"]
