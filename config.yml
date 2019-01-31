@@ -49,6 +49,25 @@ tasks:
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
 
+  ### Unload speaker module
+  unload-pc-speaker:
+    accepts: [["bash", "-c", "'kmod list | grep -c pcspkr'"]]
+    cmds:
+      - ["sudo", "rmmod", "pcspkr"]
+
+  ### Disable pc speaker
+  #disable-pc-speaker:
+  #  deps: ["unload-pc-speaker"]
+  #  cmds:
+  #    - ["sudo", "touch", "/etc/modprobe.d/nobeep.conf"]
+  #    - ["bash", "-c", "'echo \"blacklist pcspkr\" | sudo tee -a /etc/modprobe.d/nobeep.conf'"]
+
+  ### Configure blueman
+  blueman:
+    cmds: 
+      - ["mkdir", "-p", "$HOME/dln"]
+      - ["gsettings", "set", "org.blueman.transfer", "shared-path", "$HOME/dln"]
+
   ### Default
   default:
     deps: ["common"]
@@ -66,10 +85,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common"]
-    cmds: 
-      - ["mkdir", "-p", "$HOME/dln"]
-      - ["gsettings", "set", "org.blueman.transfer", "shared-path", "$HOME/dln"]
+    deps: ["common", "blueman"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
