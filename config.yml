@@ -63,4 +63,14 @@ tasks:
     templates:
       - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_desktop.cfg"]
       - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_desktop.cfg"]
+        
+  ### Laptop
+  laptop:
+    deps: ["common"]
+    links: 
+      - [".config/i3/config", "i3/config_laptop"]
+      - [".config/i3status/config", "i3status/config_laptop"]
+    templates:
+      - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_laptop.cfg"]
+      - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_laptop.cfg"]
     
