@@ -46,6 +46,7 @@ set novisualbell                 " turn off visual bell
 set nobackup                     " do not keep a backup file
 set writebackup                  " create backup file before writing
 set number                       " show line numbers
+set relativenumber
 set ignorecase                   " ignore case when searching
 set title                        " show title in console title bar
 set ttyfast                      " fast terminal connection

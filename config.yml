@@ -1,7 +1,10 @@
 ### MACROS ###################################################################
 macros:
-  install:
+  install-pacman:
     prefix: ["sudo", "pacman", "-S", "--noconfirm", "--needed"]
+
+  install:
+    prefix: ["yay", "-S", "--noconfirm", "--needed"]
 
   clone:
     deps: ["git"]
@@ -9,8 +12,14 @@ macros:
 
 ### TASKS ####################################################################
 tasks:
+  ### Install yay
+  yay:
+    cmds:
+      - ["@install-pacman", "yay"]
+
   ### Install common applications and configurations
   common:
+    deps: ["yay"]
     cmds:
       - ["@install", 
           "neovim", 
@@ -27,7 +36,6 @@ tasks:
           "python-pip",
           "manjaro-pulse",
           "pa-applet",
-          "yay",
           "arandr"]
 
       # change shell to zsh
@@ -69,13 +77,19 @@ tasks:
       - ["mkdir", "-p", "$HOME/dln"]
       - ["gsettings", "set", "org.blueman.transfer", "shared-path", "$HOME/dln"]
 
+  intellij:
+    cmds:
+      - ["@install", "intellij-idea-ultimate-edition"]
+    links:
+      - [".ideavimrc", "ideavim/ideavimrc"]
+
   ### Default
   default:
     deps: ["common"]
 
   ### Desktop
   desktop:
-    deps: ["common"]
+    deps: ["common", "intellij"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]

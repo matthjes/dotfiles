@@ -1,0 +1,21 @@
+set hlsearch
+set clipboard += unnamed
+
+nnoremap yy "+yy
+vnoremap y "+y
+
+nnoremap p "+p
+vnoremap p "+p
+nnoremap P "+P
+vnoremap P "+P
+
+nnoremap dd "+dd
+vnoremap d "+d
+
+let mapleader = ","
+
+imap jk <Esc>
+
+noremap <Space> <PageDown>
+
+map <Leader>a :action GotoAction<CR>
