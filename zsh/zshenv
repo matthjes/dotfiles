@@ -1,8 +1,11 @@
+export EDITOR=/usr/bin/nvim
+export VISUAL=/usr/bin/nvim
+
+export GOPATH=~/dev/go
+
 typeset -U path
 path=(
   ~/bin
+  $GOPATH/bin
   $path[@]
 )
-
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim

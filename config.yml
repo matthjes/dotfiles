@@ -67,6 +67,9 @@ tasks:
   ### Laptop
   laptop:
     deps: ["common"]
+    cmds: 
+      - ["mkdir", "-p", "$HOME/dln"]
+      - ["gsettings", "set", "org.blueman.transfer", "shared-path", "$HOME/dln"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
