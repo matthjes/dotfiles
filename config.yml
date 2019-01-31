@@ -43,6 +43,7 @@ tasks:
       - [".zshrc", "zsh/zshrc"]
       - [".zshenv", "zsh/zshenv"]
       - [".aliases", "zsh/aliases"]
+      - [".zspaceship", "zsh/zspaceship"] 
       - [".local/share/fonts", "fonts"]
       - [".local/share/backgrounds", "backgrounds"] 
       - [".config/ranger", "ranger"]

@@ -1,9 +1,9 @@
 [options]
-allow_bold = false
+allow_bold = fals
 #audible_bell = false
 #clickable_url = true
 #dynamic_title = true
-font = Menlo for Powerline 11
+font = FuraCode Nerd Font 11
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
