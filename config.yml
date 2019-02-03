@@ -77,7 +77,12 @@ tasks:
       - ["mkdir", "-p", "$HOME/dln"]
       - ["gsettings", "set", "org.blueman.transfer", "shared-path", "$HOME/dln"]
 
+  java:
+    cmds:
+      - ["@install", "jdk-openjdk"]
+
   intellij:
+    deps: ["java"]
     cmds:
       - ["@install", "intellij-idea-ultimate-edition"]
     links:
