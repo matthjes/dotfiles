@@ -100,7 +100,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common", "blueman"]
+    deps: ["common", "intellij", "blueman"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
