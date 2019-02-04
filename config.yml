@@ -6,6 +6,9 @@ macros:
   install:
     prefix: ["yay", "-S", "--noconfirm", "--needed"]
 
+  install-go:
+    prefix: ["go", "get"]
+
   clone:
     deps: ["git"]
     prefix: ["git", "clone"]
@@ -89,13 +92,18 @@ tasks:
     links:
       - [".ideavimrc", "ideavim/ideavimrc"]
 
+  gorun:
+    rejects: [["which", "gorun"]]
+    cmds:
+      - ["@install-go", "github.com/erning/gorun"]
+
   ### Default
   default:
     deps: ["common"]
 
   ### Desktop
   desktop:
-    deps: ["common", "intellij"]
+    deps: ["common", "intellij", "gorun"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
@@ -106,7 +114,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common", "intellij", "blueman"]
+    deps: ["common", "intellij", "gorun", "blueman"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
