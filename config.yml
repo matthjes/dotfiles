@@ -57,6 +57,7 @@ tasks:
       - [".config/ranger", "ranger"]
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
+      - [".profile", "profile/profile"]
 
   ### Unload speaker module
   unload-pc-speaker:
