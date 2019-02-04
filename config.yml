@@ -1,10 +1,10 @@
 ### MACROS ###################################################################
 macros:
-  install-pacman:
-    prefix: ["sudo", "pacman", "-S", "--noconfirm", "--needed"]
-
   install:
     prefix: ["yay", "-S", "--noconfirm", "--needed"]
+
+  install-pacman:
+    prefix: ["sudo", "pacman", "-S", "--noconfirm", "--needed"]
 
   install-go:
     prefix: ["go", "get"]
@@ -20,9 +20,17 @@ tasks:
     cmds:
       - ["@install-pacman", "yay"]
 
+  gorun:
+    cmds:
+      - ["@install-go", "github.com/erning/gorun"]
+
+  scripts:
+    cmds:
+      - ["@install-go", "github.com/matthjes/scripts"]
+
   ### Install common applications and configurations
   common:
-    deps: ["yay"]
+    deps: ["yay", "gorun", "scripts"]
     cmds:
       - ["@install", 
           "neovim", 
@@ -92,18 +100,13 @@ tasks:
     links:
       - [".ideavimrc", "ideavim/ideavimrc"]
 
-  gorun:
-    rejects: [["which", "gorun"]]
-    cmds:
-      - ["@install-go", "github.com/erning/gorun"]
-
   ### Default
   default:
     deps: ["common"]
 
   ### Desktop
   desktop:
-    deps: ["common", "intellij", "gorun"]
+    deps: ["common", "intellij"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
@@ -114,7 +117,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common", "intellij", "gorun", "blueman"]
+    deps: ["common", "intellij", "blueman"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
