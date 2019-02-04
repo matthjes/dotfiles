@@ -54,7 +54,7 @@ bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 bindsym $mod+i exec termite -e "ranger"
 
 # switch to next free workspace
-bindsym $mod+u exec --no-startup-id python ~/bin/i3-new-workspace.py
+bindsym $mod+u exec --no-startup-id ~/dev/go/bin/i3-goto-free-workspace
 
 # focus_follows_mouse no
 

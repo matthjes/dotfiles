@@ -6,3 +6,5 @@ export BROWSER=/usr/bin/firefox
 
 export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
+
+export PATH=~/bin:$GOBIN:$PATH

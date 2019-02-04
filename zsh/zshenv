@@ -7,6 +7,6 @@ export GOBIN=$GOPATH/bin
 typeset -U path
 path=(
   ~/bin
-  $GOPATH/bin
+  $GOBIN
   $path[@]
 )
