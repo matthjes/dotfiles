@@ -2,6 +2,7 @@ export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
 export GOPATH=~/dev/go
+export GOBIN=$GOPATH/bin
 
 typeset -U path
 path=(
