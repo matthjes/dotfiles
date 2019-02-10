@@ -98,7 +98,7 @@ tasks:
     cmds:
       - ["@install", "intellij-idea-ultimate-edition"]
     links:
-      - [".ideavimrc", "ideavim/ideavimrc"]
+      - [".ideavimrc", "intellij/ideavimrc"]
 
   ### Default
   default:
