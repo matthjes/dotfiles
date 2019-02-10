@@ -27,19 +27,15 @@ tasks:
     cmds:
       - ["@install", "git"]
 
-  gorun:
-    cmds:
-      - ["@go-get", "github.com/erning/gorun"]
-
   scripts:
-    rejects: [["test", "-d", "$GOPATH/src/github.com/matthjes/scripts"]]
     cmds:
-      - ["@git-clone", "git@github.com:matthjes/scripts.git", "$GOPATH/src/github.com/matthjes/scripts"]
-      - ["@go-install", "$GOPATH/src/github.com/matthjes/scripts/..."]
+      - ["mkdir",  "-p", "$HOME/bin"]
+    links:
+      - ["bin/i3-goto-free-workspace.sh"]
 
   ### Install common applications and configurations
   common:
-    deps: ["yay", "gorun", "scripts"]
+    deps: ["yay", "scripts"]
     cmds:
       - ["@install", 
           "neovim", 
