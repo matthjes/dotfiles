@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+# Based on https://github.com/lufterc/i3-new-workspace
 
-max_workspace=`i3-msg -t get_workspaces | jq -s '.[] | max_by(.num) | .num'`
-i3-msg "workspace $(($max_workspace + 1))"
+WS_JSON=$(i3-msg -t get_workspaces)
+for i in {1..10} ; do
+    if [[ $WS_JSON != *"\"num\":$i"* ]] ; then
+        i3-msg workspace number $i
+        break
+    fi
+done
