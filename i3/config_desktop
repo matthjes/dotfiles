@@ -187,6 +187,7 @@ for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="Xfburn"] floating enable
 for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [class="VirtualBox.*"] layout tabbed
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
