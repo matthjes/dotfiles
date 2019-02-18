@@ -16,6 +16,9 @@ macros:
     deps: ["git"]
     prefix: ["git", "clone"]
 
+  sudo-cp:
+    prefix: ["sudo", "cp"]
+
 ### TASKS ####################################################################
 tasks:
   ### Install yay
@@ -35,7 +38,7 @@ tasks:
 
   ### Install common applications and configurations
   common:
-    deps: ["yay", "scripts"]
+    deps: ["yay", "scripts", "udiskie"]
     cmds:
       - ["@install", 
           "neovim", 
@@ -53,6 +56,7 @@ tasks:
           "manjaro-pulse",
           "pa-applet",
           "jq",
+          "udiskie",
           "arandr"]
 
       # change shell to zsh
@@ -105,6 +109,10 @@ tasks:
       - ["@install", "intellij-idea-ultimate-edition"]
     links:
       - [".ideavimrc", "intellij/ideavimrc"]
+
+  udiskie:
+    cmds:
+      - ["@sudo-cp", "$HM_SRC/etc/udev/rules.d/99-udisks2.rules", "/etc/udev/rules.d"]
 
   ### Default
   default:
