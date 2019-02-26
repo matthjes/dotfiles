@@ -55,8 +55,8 @@ tasks:
           "python-pip",
           "manjaro-pulse",
           "pa-applet",
-          "jq",
           "udiskie",
+          "emacs",
           "arandr"]
 
       # change shell to zsh
@@ -79,6 +79,7 @@ tasks:
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
       - [".profile", "profile/profile"]
+      - [".spacemacs.d", "spacemacs"]
 
   ### Unload speaker module
   unload-pc-speaker:
@@ -114,13 +115,18 @@ tasks:
     cmds:
       - ["@sudo-cp", "$HM_SRC/etc/udev/rules.d/99-udisks2.rules", "/etc/udev/rules.d"]
 
+  spacemacs:
+    rejects: [["test", "-d", "$HOME/.emacs.d"]]
+    cmds:
+      - ["@git-clone", "git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d"]
+
   ### Default
   default:
     deps: ["common"]
 
   ### Desktop
   desktop:
-    deps: ["common", "intellij"]
+    deps: ["common", "intellij", "spacemacs"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
@@ -131,7 +137,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common", "intellij", "blueman"]
+    deps: ["common", "intellij", "blueman", "spacemacs"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
