@@ -2,7 +2,7 @@
 
 (defun mj-org/post-init-org()
   (with-eval-after-load 'org
-    (setq org-directory "~/doc/Dropbox/org")
+    (setq org-directory "~/doc/org")
 
     (setq org-agenda-files (list org-directory))
     (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")

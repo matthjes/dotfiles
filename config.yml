@@ -59,9 +59,6 @@ tasks:
           "emacs",
           "arandr"]
 
-      # change shell to zsh
-      - ["chsh", "-s", "/bin/zsh"]
-
       # install zplugin
       - ["wget", "-O/tmp/install.sh", "https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh"]
       - ["sh", "/tmp/install.sh"]
@@ -94,7 +91,11 @@ tasks:
   #    - ["sudo", "touch", "/etc/modprobe.d/nobeep.conf"]
   #    - ["bash", "-c", "'echo \"blacklist pcspkr\" | sudo tee -a /etc/modprobe.d/nobeep.conf'"]
 
-  ### Configure blueman
+  change-shell:
+    rejects: [["test", '"/bin/zsh" = $SHELL']]
+    cmds:
+      - ["chsh", "-s", "/bin/zsh"]
+
   blueman:
     cmds: 
       - ["mkdir", "-p", "$HOME/dln"]
@@ -118,15 +119,15 @@ tasks:
   spacemacs:
     rejects: [["test", "-d", "$HOME/.emacs.d"]]
     cmds:
-      - ["@git-clone", "git clone https://github.com/syl20bnr/spacemacs $HOME/.emacs.d"]
+      - ["@git-clone", "https://github.com/syl20bnr/spacemacs", "$HOME/.emacs.d"]
 
   ### Default
   default:
-    deps: ["common"]
+    deps: ["common", "spacemacs", "change-shell"]
 
   ### Desktop
   desktop:
-    deps: ["common", "intellij", "spacemacs"]
+    deps: ["default", "intellij"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
@@ -137,7 +138,7 @@ tasks:
         
   ### Laptop
   laptop:
-    deps: ["common", "intellij", "blueman", "spacemacs"]
+    deps: ["default", "intellij", "blueman"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
