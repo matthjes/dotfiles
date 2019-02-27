@@ -2,7 +2,7 @@
 
 (defun mj-org/post-init-org()
   (with-eval-after-load 'org
-    (setq org-directory "~/doc/org")
+    (setq org-directory "~/doc/Dropbox/org")
 
     (setq org-agenda-files (list org-directory))
     (setq org-agenda-file-regexp "\\`[^.].*\\.org\\'\\|\\`[0-9]+\\'")
@@ -21,6 +21,8 @@
     (setq org-journal-time-prefix "* ")
     (setq org-journal-time-format "%H:%M ")
     (setq org-journal-carryover-items nil)
+    (setq org-journal-enable-encryption nil)
+    (setq org-journal-encrypt-journal nil)
 
     (setq org-log-into-drawer t)
     (setq org-log-done nil)
@@ -45,7 +47,7 @@
           )
 
     (setq org-startup-indented t)
-    
+
     (setq org-capture-templates '(("t" "Task"
                                    entry
                                    (file org-task-file)
