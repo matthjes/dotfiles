@@ -121,8 +121,8 @@ bindsym $mod+Ctrl+Left workspace prev
 # to display names or symbols instead of plain workspace numbers you can use
 # something like: set $ws1 1:mail
 #                 set $ws2 2:
-set $ws1 1:1:emacs
-set $ws2 2:2:firefox
+set $ws1 1
+set $ws2 2
 set $ws3 3
 set $ws4 4
 set $ws5 5
@@ -257,10 +257,10 @@ exec --no-startup-id setxkbmap -layout us -variant intl
 exec --no-startup-id /home/mj/.screenlayout/dual.sh
 exec --no-startup-id /home/mj/bin/set_sink alsa_output.pci-0000_00_1b.0.analog-stereo
 
-assign [class="Emacs"] $ws1
+assign [class="Emacs"] $ws2
 exec --no-startup-id emacs
 
-assign [class="Firefox"] $ws2
+assign [class="Firefox"] $ws1
 exec --no-startup-id firefox
 
 # Color palette used for the terminal ( ~/.Xresources file )
