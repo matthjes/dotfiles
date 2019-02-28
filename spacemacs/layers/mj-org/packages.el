@@ -29,14 +29,15 @@
 
     (setq org-agenda-start-with-follow-mode t)
 
-    (setq org-image-actual-width (/ (display-pixel-width) 3))
+    ;;(setq org-image-actual-width (/ (display-pixel-width) 3))
+    (setq org-image-actual-width 400)
 
     ;; Todo keywords
     (setq org-todo-keywords
          '((sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(@w)" "|"
                       "DONE(d!)" "CANCELED(@c)")))
 
-    (setq org-todo-keyword-faces
+    (setq org-todo-keyword-fac
           '(
             ("TODO" . (:foreground "#fb4933" :weight bold))
             ("IN-PROGRESS" . (:foreground "#fabd2f" :weight bold))
