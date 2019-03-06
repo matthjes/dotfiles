@@ -1,0 +1,3 @@
+DVI-I-1 LG
+DVI-D-0 Samsung
+HDMI-0 TV
