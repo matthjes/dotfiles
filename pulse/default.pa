@@ -139,4 +139,5 @@ load-module module-filter-apply
 
 ### Make some devices default
 set-default-sink alsa_output.pci-0000_01_00.1.hdmi-stereo
+set-card-profile 0 output:hdmi-stereo-extra2
 #set-default-source input

@@ -29,8 +29,11 @@
 
     (setq org-agenda-start-with-follow-mode t)
 
-    ;;(setq org-image-actual-width (/ (display-pixel-width) 3))
-    (setq org-image-actual-width 400)
+    (setq org-startup-with-inline-images t)
+    (setq org-image-actual-width nil)
+
+    ;; PlantUML
+    (setq org-plantuml-jar-path "~/.spacemacs.d/plantuml.jar")
 
     ;; Todo keywords
     (setq org-todo-keywords

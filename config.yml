@@ -19,6 +19,9 @@ macros:
   sudo-cp:
     prefix: ["sudo", "cp"]
 
+  sudo-ln:
+    prefix: ["sudo", "ln", "-s"]
+
 ### TASKS ####################################################################
 tasks:
   ### Install yay
@@ -36,6 +39,7 @@ tasks:
     links:
       - ["bin/i3-goto-free-workspace.sh"]
       - ["bin/rofi-select-monitor-layout.sh"]
+      - ["bin/rofi-pulseaudio.sh"]
 
   ### Install common applications and configurations
   common:
@@ -122,17 +126,21 @@ tasks:
     cmds:
       - ["@git-clone", "https://github.com/syl20bnr/spacemacs", "$HOME/.emacs.d"]
 
+  pulse:
+    rejects: [["test", "-L", "/etc/pulse/default.pa"]]
+    cmds:
+      - ["@sudo-ln", ".config/pulse/default.pa", "/etc/pulse/default.pa"]
+
   ### Default
   default:
     deps: ["common", "spacemacs", "change-shell"]
 
   ### Desktop
   desktop:
-    deps: ["default", "intellij"]
+    deps: ["default", "pulse", "intellij"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
-      - [".config/pulse/default.pa", "pulse/default.pa"]
       - ["bin/output-mapping.txt", "bin/output-mapping-desktop.txt"]
     templates:
       - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_desktop.cfg"]

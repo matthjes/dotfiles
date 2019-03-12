@@ -259,12 +259,6 @@ exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id setxkbmap -layout us -variant intl
 
-assign [class="Emacs"] $ws1
-exec --no-startup-id emacs
-
-assign [class="Firefox"] $ws2
-exec --no-startup-id firefox
-
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
 # https://i3wm.org/docs/userguide.html#xresources
