@@ -39,7 +39,6 @@ tasks:
     links:
       - ["bin/i3-goto-free-workspace.sh"]
       - ["bin/rofi-select-monitor-layout.sh"]
-      - ["bin/rofi-pulseaudio.sh"]
 
   ### Install common applications and configurations
   common:
