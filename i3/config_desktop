@@ -28,8 +28,6 @@ bindsym $mod+q kill
 # bindsym $mod+d exec --no-startup-id dmenu_recency
 bindsym $mod+space exec --no-startup-id "rofi -modi window,drun,run -show drun"
 bindsym $mod+semicolon exec --no-startup-id "rofi -modi window,drun,run -show window"
-bindsym $mod+m exec --no-startup-id "~/bin/rofi-select-monitor-layout.sh"
-bindsym $mod+p exec --no-startup-id "~/bin/rofi-pulseaudio.sh --output"
 
 ################################################################################################
 ## sound-section - DO NOT EDIT if you wish to automatically upgrade Alsa -> Pulseaudio later! ##
@@ -256,8 +254,7 @@ exec --no-startup-id udiskie --tray
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id setxkbmap -layout us -variant intl
-exec --no-startup-id /home/mj/.screenlayout/dual.sh
-exec --no-startup-id /home/mj/bin/set_sink alsa_output.pci-0000_00_1b.0.analog-stereo
+exec --no-startup-id /home/mj/.screenlayout/Dual.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
