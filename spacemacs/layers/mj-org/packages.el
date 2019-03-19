@@ -13,16 +13,21 @@
     ;; Tasks
     (setq org-task-file (concat org-directory "/tasks.org"))
 
-    ;; Journal setup
+    ;; Journal
+    (setq org-journal-file-format "%Y-%m.org")
+    (setq org-journal-file-type 'monthly)
     (setq org-journal-dir org-directory)
-    (setq org-journal-file-format "%Y-%m-%d.org")
-    (setq org-journal-date-prefix "#+TITLE: ")
+    (setq org-journal-date-prefix "\n* ")
     (setq org-journal-date-format "%A, %d. %B %Y")
-    (setq org-journal-time-prefix "* ")
+    (setq org-journal-time-prefix "** ")
     (setq org-journal-time-format "%H:%M ")
     (setq org-journal-carryover-items nil)
     (setq org-journal-enable-encryption nil)
     (setq org-journal-encrypt-journal nil)
+
+    ;; Clock
+    (setq org-clock-persist 'history)
+    (org-clock-persistence-insinuate)
 
     (setq org-log-into-drawer t)
     (setq org-log-done nil)
