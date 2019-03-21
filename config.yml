@@ -112,7 +112,7 @@ tasks:
   intellij:
     deps: ["java"]
     cmds:
-      - ["@install", "intellij-idea-ultimate-edition"]
+      - ["@install", "jetbrains-toolbox"]
     links:
       - [".ideavimrc", "intellij/ideavimrc"]
 

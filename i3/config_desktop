@@ -254,6 +254,7 @@ exec --no-startup-id udiskie --tray
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id setxkbmap -layout us -variant intl
+exec --no-startup-id jetbrains-toolbox --minimize
 exec --no-startup-id /home/mj/.screenlayout/Dual.sh
 
 # Color palette used for the terminal ( ~/.Xresources file )
