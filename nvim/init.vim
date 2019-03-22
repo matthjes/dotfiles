@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'bling/vim-airline'
-Plug 'morhetz/gruvbox'
+Plug 'mswift42/vim-themes'
 
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
@@ -83,8 +83,9 @@ set cmdheight=2
 
 let g:deoplete#enable_at_startup = 1
 
-set background=dark
-colorscheme gruvbox
+set background=light
+set termguicolors
+colorscheme soft-morning
 
 autocmd BufEnter *.txt call SetTxtOptions()
 
