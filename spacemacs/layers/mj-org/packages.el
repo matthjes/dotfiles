@@ -45,16 +45,6 @@
          '((sequence "TODO(t)" "IN-PROGRESS(i!)" "WAITING(@w)" "|"
                       "DONE(d!)" "CANCELED(@c)")))
 
-    (setq org-todo-keyword-fac
-          '(
-            ("TODO" . (:foreground "#fb4933" :weight bold))
-            ("IN-PROGRESS" . (:foreground "#fabd2f" :weight bold))
-            ("WAITING" . (:foreground "#fe8019" :weight bold))
-            ("DONE" . (:foreground "#8ec07c" :weight bold))
-            ("CANCELED" . (:foreground "#83a598" :weight bold))
-           )
-          )
-
     (setq org-startup-indented t)
 
     (setq org-capture-templates '(("t" "Task"
