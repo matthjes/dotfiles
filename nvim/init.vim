@@ -2,7 +2,7 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'bling/vim-airline'
-Plug 'mswift42/vim-themes'
+Plug 'morhetz/gruvbox'
 
 " CtrlP
 Plug 'ctrlpvim/ctrlp.vim'
@@ -20,11 +20,11 @@ Plug 'jiangmiao/auto-pairs'
 " Tabline
 Plug 'mkitt/tabline.vim'
 
-" Tables
-Plug 'dhruvasagar/vim-table-mode'
-
 " fugitive diff tool
 Plug 'tpope/vim-fugitive'
+
+Plug 'vimwiki/vimwiki'
+Plug 'tbabej/taskwiki'
 
 " Initialize plugin system
 call plug#end()
@@ -83,9 +83,9 @@ set cmdheight=2
 
 let g:deoplete#enable_at_startup = 1
 
-set background=light
+set background=dark
 set termguicolors
-colorscheme soft-morning
+colorscheme gruvbox
 
 autocmd BufEnter *.txt call SetTxtOptions()
 

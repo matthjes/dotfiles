@@ -1,6 +1,6 @@
 let g:vimwiki_list = [
       \ {
-      \   'path': '/home/mj/gdrive/notes', 
+      \   'path': '~/doc/Dropbox/wiki', 
       \   'syntax': 'markdown', 
       \   'ext': '.md',
       \   'diary_link_fmt': '%Y-%m-%d'
