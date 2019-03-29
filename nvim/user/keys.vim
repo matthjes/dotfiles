@@ -5,8 +5,6 @@ vmap u <ESC>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " remap page up / down
-noremap <C-j> <PageDown>
-noremap <C-k> <PageUp>
 noremap <Space> <PageDown>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -15,14 +13,6 @@ nnoremap <Leader>f za
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " switch windows
-tnoremap <C-j> <C-\><C-n><C-w>h
-tnoremap <C-k> <C-\><C-n><C-w>j
-tnoremap <C-i> <C-\><C-n><C-w>k
-tnoremap <C-l> <C-\><C-n><C-w>l
-inoremap <C-j> <C-\><C-n><C-w>h
-inoremap <C-k> <C-\><C-n><C-w>j
-inoremap <C-i> <C-\><C-n><C-w>k
-inoremap <C-l> <C-\><C-n><C-w>l
 nnoremap <leader>j <C-w>h
 nnoremap <leader>k <C-w>j
 nnoremap <leader>i <C-w>k

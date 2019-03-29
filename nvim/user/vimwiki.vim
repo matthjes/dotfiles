@@ -1,11 +1,22 @@
-let g:vimwiki_list = [
-      \ {
-      \   'path': '~/doc/Dropbox/wiki', 
-      \   'syntax': 'markdown', 
-      \   'ext': '.md',
-      \   'diary_link_fmt': '%Y-%m-%d'
-      \ }
-      \]
+let g:vimwiki_list = [{
+  \ 'automatic_nested_syntaxes':1,
+  \ 'path_html': '$HOME/doc/Dropbox/wiki/html',
+  \ 'path': '$HOME/doc/Dropbox/wiki',
+  \ 'template_path': '$HOME/.config/nvim/scripts',
+  \ 'syntax': 'markdown',
+  \ 'ext':'.md',
+  \ 'diary_link_fmt': '%Y-%m-%d',
+  \ 'template_default':'markdown',
+  \ 'custom_wiki2html': '$HOME/.config/nvim/scripts/wiki2html.sh',
+  \ 'template_ext':'.html'
+\}]
+
+au BufRead,BufNewFile *.md set filetype=vimwiki
+
+let g:taskwiki_sort_orders={"C": "pri-"}
+let g:taskwiki_syntax = 'markdown'
+let g:taskwiki_markdown_syntax='markdown'
+let g:taskwiki_markup_syntax='markdown'
 
 " name of months
 let g:vimwiki_diary_months = {

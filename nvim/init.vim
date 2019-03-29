@@ -26,6 +26,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
 Plug 'tbabej/taskwiki'
 
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
+
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
 
@@ -73,6 +78,11 @@ set completeopt+=longest,menuone " completion option: insert longest common text
 set completeopt-=preview
 set foldmethod=syntax
 set foldlevel=99
+set encoding=utf-8
+set fileencoding=utf-8
+set breakindent
+set breakindentopt=shift:2
+set nospell
 
 " do not show files with certain extensions (binary files)
 set wildignore+=*.o,*.obj,.git,.svn,*.mexa64,*.pdf,*.jpg,*.png,*.gif,*.eps,*.svg,*.pyc

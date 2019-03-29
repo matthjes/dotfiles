@@ -57,9 +57,10 @@ tasks:
           "firefox",
           "python",
           "python-pip",
-          "tasklib",
+          "python-tasklib",
           "task",
           "manjaro-pulse",
+          "pandoc",
           "pa-applet",
           "udiskie",
           "arandr"]
