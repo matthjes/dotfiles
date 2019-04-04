@@ -29,3 +29,9 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+#WingTask sync server
+taskd.server=app.wingtask.com:53589
+taskd.key=~/dot/task/matthjes@gmail.com.key.pem
+taskd.ca=~/dot/task/dst.pem
+taskd.certificate=~/dot/task/matthjes@gmail.com.cert.pem
+taskd.credentials=WingTask/matthjes@gmail.com/8dbb99d3-770d-42e6-bb2d-82ba586f9758
