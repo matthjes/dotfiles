@@ -25,6 +25,8 @@
     (setq org-journal-enable-encryption nil)
     (setq org-journal-encrypt-journal nil)
 
+    (setq org-cycle-separator-lines 1)
+
     ;; Clock
     (setq org-clock-persist 'history)
     (org-clock-persistence-insinuate)
