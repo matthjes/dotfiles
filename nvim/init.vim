@@ -4,9 +4,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'bling/vim-airline'
 Plug 'morhetz/gruvbox'
 
-" CtrlP
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Completion
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go'
@@ -24,6 +21,9 @@ Plug 'mkitt/tabline.vim'
 Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-surround'
+
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -92,6 +92,7 @@ set termguicolors
 colorscheme gruvbox
 
 autocmd BufEnter *.txt call SetTxtOptions()
+autocmd! BufRead,BufNewFile,BufFilePre *.md set filetype=markdown.pandoc
 
 function SetTxtOptions()
   setlocal textwidth=79

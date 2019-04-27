@@ -16,6 +16,10 @@ macros:
     deps: ["git"]
     prefix: ["git", "clone"]
 
+  git-checkout:
+    deps: ["git"]
+    prefix: ["git", "checkout"]
+
   sudo-cp:
     prefix: ["sudo", "cp"]
 
@@ -57,13 +61,12 @@ tasks:
           "firefox",
           "python",
           "python-pip",
-          "emacs",
           "manjaro-pulse",
-          "pandoc",
           "pa-applet",
           "udiskie",
           "docker",
           "cmus",
+          "emacs",
           "arandr"]
 
       # install zplugin
@@ -125,6 +128,8 @@ tasks:
     rejects: [["test", "-d", "$HOME/.emacs.d"]]
     cmds:
       - ["@git-clone", "https://github.com/syl20bnr/spacemacs", "$HOME/.emacs.d"]
+      - ["cd", "$HOME/.emacs.d"]
+      - ["@git-checkout", "develop"]
 
   pulse:
     rejects: [["test", "-L", "/etc/pulse/default.pa"]]

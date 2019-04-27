@@ -11,7 +11,7 @@ let g:vimwiki_list = [{
   \ 'template_ext':'.html'
 \}]
 
-au BufRead,BufNewFile *.md set filetype=vimwiki
+au FileType vimwiki set syntax=markdown.pandoc
 
 let g:taskwiki_sort_orders={"C": "pri-"}
 let g:taskwiki_syntax = 'markdown'
@@ -32,7 +32,7 @@ let g:vimwiki_html_header_numbering_sym = '.'
 " header numbering
 let g:vimwiki_html_header_numbering = 2
 
-au FileType vimwiki nnoremap <Leader>n :call <SID>NewNote()<CR>
+au FileType markdown.pandoc nnoremap <Leader>n :call <SID>NewNote()<CR>
 
 function! s:NewNote()
   let g:title = input("Note title: ")
