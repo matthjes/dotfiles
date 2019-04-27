@@ -19,5 +19,3 @@ let mapleader = ","
 imap jk <Esc>
 
 noremap <Space> <PageDown>
-
-map <Leader>a :action GotoAction<CR>

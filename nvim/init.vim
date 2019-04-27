@@ -23,12 +23,6 @@ Plug 'mkitt/tabline.vim'
 " fugitive diff tool
 Plug 'tpope/vim-fugitive'
 
-Plug 'vimwiki/vimwiki'
-Plug 'tbabej/taskwiki'
-
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-
 Plug 'tpope/vim-surround'
 
 " Initialize plugin system

@@ -57,12 +57,13 @@ tasks:
           "firefox",
           "python",
           "python-pip",
-          "python-tasklib",
-          "task",
+          "emacs",
           "manjaro-pulse",
           "pandoc",
           "pa-applet",
           "udiskie",
+          "docker",
+          "cmus",
           "arandr"]
 
       # install zplugin
@@ -82,7 +83,7 @@ tasks:
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
       - [".profile", "profile/profile"]
-      - [".taskrc", "task/taskrc"]
+      - [".spacemacs.d", "spacemacs"]
 
   ### Unload speaker module
   unload-pc-speaker:
@@ -120,6 +121,11 @@ tasks:
     cmds:
       - ["@sudo-cp", "$HM_SRC/etc/udev/rules.d/99-udisks2.rules", "/etc/udev/rules.d"]
 
+  spacemacs:
+    rejects: [["test", "-d", "$HOME/.emacs.d"]]
+    cmds:
+      - ["@git-clone", "https://github.com/syl20bnr/spacemacs", "$HOME/.emacs.d"]
+
   pulse:
     rejects: [["test", "-L", "/etc/pulse/default.pa"]]
     cmds:
@@ -127,7 +133,7 @@ tasks:
 
   ### Default
   default:
-    deps: ["common", "change-shell"]
+    deps: ["common", "spacemacs", "change-shell"]
 
   ### Desktop
   desktop:
