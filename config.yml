@@ -66,7 +66,6 @@ tasks:
           "udiskie",
           "docker",
           "cmus",
-          "emacs",
           "arandr"]
 
       # install zplugin
@@ -86,7 +85,6 @@ tasks:
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
       - [".profile", "profile/profile"]
-      - [".spacemacs.d", "spacemacs"]
 
   ### Unload speaker module
   unload-pc-speaker:
@@ -124,13 +122,6 @@ tasks:
     cmds:
       - ["@sudo-cp", "$HM_SRC/etc/udev/rules.d/99-udisks2.rules", "/etc/udev/rules.d"]
 
-  spacemacs:
-    rejects: [["test", "-d", "$HOME/.emacs.d"]]
-    cmds:
-      - ["@git-clone", "https://github.com/syl20bnr/spacemacs", "$HOME/.emacs.d"]
-      - ["cd", "$HOME/.emacs.d"]
-      - ["@git-checkout", "develop"]
-
   pulse:
     rejects: [["test", "-L", "/etc/pulse/default.pa"]]
     cmds:
@@ -138,7 +129,7 @@ tasks:
 
   ### Default
   default:
-    deps: ["common", "spacemacs", "change-shell"]
+    deps: ["common", "change-shell"]
 
   ### Desktop
   desktop:
