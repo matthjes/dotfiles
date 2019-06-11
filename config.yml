@@ -100,7 +100,6 @@ tasks:
   #    - ["bash", "-c", "'echo \"blacklist pcspkr\" | sudo tee -a /etc/modprobe.d/nobeep.conf'"]
 
   change-shell:
-    rejects: [["test", '"/bin/zsh" = $SHELL']]
     cmds:
       - ["chsh", "-s", "/bin/zsh"]
 
