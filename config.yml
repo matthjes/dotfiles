@@ -121,6 +121,10 @@ tasks:
     cmds:
       - ["@sudo-cp", "$HM_SRC/etc/udev/rules.d/99-udisks2.rules", "/etc/udev/rules.d"]
 
+  blurlock:
+    cmds:
+      - ["@sudo-cp", "$HM_SRC/usr/bin/blurlock", "/usr/bin"]
+
   pulse:
     rejects: [["test", "-L", "/etc/pulse/default.pa"]]
     cmds:

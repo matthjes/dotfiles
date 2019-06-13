@@ -22,8 +22,9 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-surround'
 
-Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --bin'}
-Plug 'junegunn/fzf.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
+Plug 'tyru/open-browser.vim'
+Plug 'aklt/plantuml-syntax'
 
 " Initialize plugin system
 call plug#end()
