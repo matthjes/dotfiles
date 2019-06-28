@@ -10,5 +10,6 @@ typeset -U path
 path=(
   ~/bin
   $GOBIN
+  ~/.local/bin
   $path[@]
 )

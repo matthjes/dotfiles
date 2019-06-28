@@ -5,3 +5,14 @@ alias vim='/usr/bin/nvim'
 alias ls='ls --color=auto --group-directories-first'
 alias la='ls -lah'
 alias ll='ls -a'
+
+# insect
+alias calc='insect'
+
+# lastpass
+alias lpass-login='lpass login matthias.jeschke@iteratec.com'
+alias lpass-pw='lpass show -c --password'
+alias lpass-user='lpass show -c --username'
+
+# crgrep
+alias crgrepr='crgrep -r -color always -i'

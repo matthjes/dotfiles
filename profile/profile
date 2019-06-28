@@ -4,7 +4,9 @@ export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 # fix "xdg-open fork-bomb" export your preferred browser from here
 export BROWSER=/usr/bin/firefox
 
+export LPASS_AGENT_DISABLE=1
+
 export GOPATH=~/dev/go
 export GOBIN=$GOPATH/bin
 
-export PATH=~/bin:$GOBIN:$PATH
+export PATH=~/bin:$GOBIN:~/.local/share/crgrep/bin:~/.local/bin/$PATH
