@@ -54,11 +54,10 @@ tasks:
           "rofi", 
           "ranger", 
           "zsh", 
-          "termite", 
+          "alacritty", 
           "git",
           "vlc",
           "feh",
-          "firefox",
           "python",
           "python-pip",
           "manjaro-pulse",
@@ -82,7 +81,7 @@ tasks:
       - [".local/share/fonts", "fonts"]
       - [".local/share/backgrounds", "backgrounds"] 
       - [".config/ranger", "ranger"]
-      - [".config/termite", "termite"]
+      - [".config/alacritty", "alacritty"]
       - [".config/rofi", "rofi"]
       - [".profile", "profile/profile"]
 
@@ -137,6 +136,8 @@ tasks:
   ### Desktop
   desktop:
     deps: ["default", "pulse", "intellij"]
+    cmds:
+      - ["@install", "firefox"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
@@ -148,6 +149,8 @@ tasks:
   ### Laptop
   laptop:
     deps: ["default", "intellij", "blueman"]
+    cmds:
+      - ["@install", "firefox-developer-edition"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
