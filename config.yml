@@ -73,7 +73,6 @@ tasks:
 
     links:
       - [".config/nvim", "nvim"]
-      - [".gitconfig", "git/gitconfig"]
       - [".zshrc", "zsh/zshrc"]
       - [".zshenv", "zsh/zshenv"]
       - [".aliases", "zsh/aliases"]
@@ -83,7 +82,6 @@ tasks:
       - [".config/ranger", "ranger"]
       - [".config/alacritty", "alacritty"]
       - [".config/rofi", "rofi"]
-      - [".profile", "profile/profile"]
 
   ### Unload speaker module
   unload-pc-speaker:
@@ -142,6 +140,8 @@ tasks:
       - [".config/i3/config", "i3/config_desktop"]
       - [".config/i3status/config", "i3status/config_desktop"]
       - ["bin/output-mapping.txt", "bin/output-mapping-desktop.txt"]
+      - [".profile", "profile/profile-desktop"]
+      - [".gitconfig", "git/gitconfig-desktop"]
     templates:
       - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_desktop.cfg"]
       - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_desktop.cfg"]
@@ -154,6 +154,8 @@ tasks:
     links: 
       - [".config/i3/config", "i3/config_laptop"]
       - [".config/i3status/config", "i3status/config_laptop"]
+      - [".profile", "profile/profile-laptop"]
+      - [".gitconfig", "git/gitconfig-laptop"]
     templates:
       - [".config/nitrogen/bg-saved.cfg", "nitrogen/bg-saved_laptop.cfg"]
       - [".config/nitrogen/nitrogen.cfg", "nitrogen/nitrogen_laptop.cfg"]

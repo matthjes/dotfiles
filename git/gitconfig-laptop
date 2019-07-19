@@ -1,0 +1,35 @@
+[user]
+	email = matthjes@gmail.com
+	name = Matthias Jeschke
+[alias]
+  l = log --graph --all --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' 
+
+  a = add
+
+  c = commit --verbose
+  ca = commit -a --verbose
+  cm = commit -m
+  cam = commit -am
+  m = commit --amend --verbose
+
+  go = !git commit -a -m $1 && git pull --rebase && git push && git status
+
+  d = diff
+  ds = diff --stat
+  dc = diff --cached
+
+  s = status -s
+
+  co = checkout
+  cob = checkout -b
+
+  p = push 
+  pu = push -u
+
+  la = "!git config -l | grep alias | cut -c 7-"
+
+[http]
+	sslBackend = openssl
+
+[http "https://cnap-git.bmwgroup.net"]
+	sslCAInfo = /home/mj/.certs/bmw.crt
