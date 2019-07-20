@@ -22,9 +22,7 @@ Plug 'tpope/vim-fugitive'
 
 Plug 'tpope/vim-surround'
 
-Plug 'weirongxu/plantuml-previewer.vim'
-Plug 'tyru/open-browser.vim'
-Plug 'aklt/plantuml-syntax'
+Plug 'chrisbra/unicode.vim'
 
 " Initialize plugin system
 call plug#end()
