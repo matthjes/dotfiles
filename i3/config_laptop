@@ -13,7 +13,7 @@ hide_edge_borders none
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font xft:Noto Sans 9
+font xft: MesloLGM Nerd Font 10
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
@@ -298,7 +298,10 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command ~/bin/bumblebee-status \
+    -m network_traffic nic pacman weather cpu memory disk:ssd battery datetime \
+    -p pacman.sum="True" ssd.format="SSD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
+    -t onedark-powerline
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
