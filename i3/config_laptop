@@ -299,8 +299,8 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command ~/bin/bumblebee-status \
-    -m network_traffic nic pacman weather cpu memory disk:ssd battery datetime \
-    -p pacman.sum="True" ssd.format="SSD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
+    -m network_traffic nic pacman cpu memory disk:ssd battery datetime \
+    -p interval=2 pacman.sum="True" ssd.format="SSD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M" memory.format="{used} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
     -t onedark-powerline
 	position bottom
 
