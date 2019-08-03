@@ -54,7 +54,7 @@ tasks:
           "rofi", 
           "ranger", 
           "zsh", 
-          "alacritty", 
+          "termite", 
           "git",
           "vlc",
           "feh",
@@ -80,7 +80,7 @@ tasks:
       - [".local/share/fonts", "fonts"]
       - [".local/share/backgrounds", "backgrounds"] 
       - [".config/ranger", "ranger"]
-      - [".config/alacritty", "alacritty"]
+      - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
 
   ### Unload speaker module
