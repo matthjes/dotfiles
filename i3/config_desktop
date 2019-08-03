@@ -47,7 +47,7 @@ bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
-bindsym $mod+i exec termite -e "ranger"
+bindsym $mod+i exec alacritty -e "ranger"
 
 # switch to next free workspace
 bindsym $mod+u exec --no-startup-id "bash ~/bin/i3-goto-free-workspace.sh"
@@ -248,7 +248,6 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
-exec --no-startup-id conky -c /usr/share/conky/conky_maia
 exec --no-startup-id udiskie --tray
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -292,8 +291,8 @@ bar {
 	i3bar_command i3bar
 	status_command ~/bin/bumblebee-status \
     -m network_traffic nic pacman weather cpu memory disk:ssd disk:hdd datetime \
-    -p ssd.path=/ ssd.format="SSD {left} ({percent:05.02f}%)" hdd.path=/mnt/internal hdd.format="HDD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" \
-    -t onedark-powerline
+    -p pacman.sum="True" ssd.path=/ ssd.format="SSD {left} ({percent:05.02f}%)" hdd.path=/mnt/internal hdd.format="HDD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" \
+    -t iceberg
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
