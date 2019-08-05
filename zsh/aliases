@@ -15,6 +15,6 @@ alias lpass-pw='lpass show -c --password'
 alias lpass-user='lpass show -c --username'
 
 # crgrep
-alias crgrepr='crgrep -r -color always -i'
+alias crgrep='crgrep -r -color always -i'
 
 alias cp='rsync --progress --size-only --inplace --verbose'

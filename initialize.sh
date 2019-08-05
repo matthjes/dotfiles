@@ -17,4 +17,4 @@ fi
 
 # Install homemaker
 echo "Installing homemaker..."
-go get github.com/matthjes/homemaker
+go get github.com/FooSoft/homemaker
