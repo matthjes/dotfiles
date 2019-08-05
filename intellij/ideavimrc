@@ -1,7 +1,7 @@
 set hlsearch
 set clipboard += unnamed
 set number
-set relativenumber
+" set relativenumber
 
 nnoremap yy "+yy
 vnoremap y "+y

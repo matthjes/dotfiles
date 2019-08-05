@@ -19,7 +19,7 @@ font xft: MesloLGM Nerd Font 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+q kill
@@ -248,7 +248,6 @@ exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id clipit
-exec --no-startup-id conky -c /usr/share/conky/conky_maia
 exec --no-startup-id udiskie --tray
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
@@ -291,22 +290,20 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command ~/bin/bumblebee-status \
-    -m network_traffic nic pacman weather cpu memory disk:ssd disk:hdd datetime \
-    -p ssd.path=/ ssd.format="SSD {left} ({percent:05.02f}%)" hdd.path=/mnt/internal hdd.format="HDD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" \
-    -t onedark-powerline
+    -m network_traffic nic pacman cpu memory disk:ssd disk:hdd datetime \
+    -p pacman.sum="True" ssd.path=/ ssd.format="SSD {left} ({percent:05.02f}%)" hdd.path=/mnt/internal hdd.format="HDD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M:%S" memory.format="{used} ({percent:05.02f}%)" \
+    -t ~/dot/i3/matthjes.json
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
 	tray_output primary
-#	tray_output eDP1
 
 	bindsym button4 nop
 	bindsym button5 nop
-#   font xft:URWGothic-Book 11
 	strip_workspace_numbers yes
 
     colors {
-        background #222D31
+        background #111e2f
         statusline #F9FAF9
         separator  #454947
 
