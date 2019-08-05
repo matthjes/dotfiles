@@ -300,7 +300,7 @@ bar {
 	status_command ~/bin/bumblebee-status \
     -m nic pacman cpu memory disk:ssd battery datetime \
     -p interval=2 pacman.sum="True" ssd.format="SSD {left}/{size} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M" memory.format="{used}/{total} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
-    -t onedark-powerline
+    -t ~/dot/i3/matthjes.json
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -313,7 +313,7 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #161821
+        background #111e2f
         statusline #F9FAF9
         separator  #454947
 
