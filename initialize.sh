@@ -4,8 +4,8 @@
 echo "Installing go..."
 sudo pacman -S --needed --noconfirm go
 
-export GOPATH=~/dev/go
-export GOBIN=$GOPATH/bin
+export GOPATH=~/.local/share/go
+export GOBIN=$HOME/go/bin
 
 # Setup go
 if [ ! -d $GOPATH  ]; then
@@ -13,6 +13,13 @@ if [ ! -d $GOPATH  ]; then
   mkdir -p $GOPATH
 else
   echo "Go directory ($GOPATH) already present."
+fi
+
+if [ ! -d $GOBIN  ]; then
+  echo "Creating go bin directory ($GOBIN)..."
+  mkdir -p $GOBIN
+else
+  echo "Go bin directory ($GOBIN) already present."
 fi
 
 # Install homemaker

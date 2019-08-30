@@ -1,8 +1,8 @@
 export EDITOR=/usr/bin/nvim
 export VISUAL=/usr/bin/nvim
 
-export GOPATH=~/dev/go
-export GOBIN=$GOPATH/bin
+export GOPATH=~/.local/share/go
+export GOBIN=$HOME/go/bin
 
 export SWT_GTK3=0
 
