@@ -82,6 +82,8 @@ tasks:
       - [".config/ranger", "ranger"]
       - [".config/termite", "termite"]
       - [".config/rofi", "rofi"]
+      - ["bin/i3exit", "i3/i3exit"]
+      - ["bin/blurlock", "i3/blurlock"]
 
   ### Unload speaker module
   unload-pc-speaker:
@@ -138,7 +140,6 @@ tasks:
       - ["@install", "firefox"]
     links: 
       - [".config/i3/config", "i3/config_desktop"]
-      - [".config/i3status/config", "i3status/config_desktop"]
       - ["bin/output-mapping.txt", "bin/output-mapping-desktop.txt"]
       - [".profile", "profile/profile-desktop"]
       - [".gitconfig", "git/gitconfig-desktop"]
@@ -153,7 +154,6 @@ tasks:
       - ["@install", "firefox-developer-edition"]
     links: 
       - [".config/i3/config", "i3/config_laptop"]
-      - [".config/i3status/config", "i3status/config_laptop"]
       - [".profile", "profile/profile-laptop"]
       - [".gitconfig", "git/gitconfig-laptop"]
     templates:

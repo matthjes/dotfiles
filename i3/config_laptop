@@ -212,13 +212,13 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 bindsym $mod+0 mode "$mode_system"
 set $mode_system (l)ock, (e)xit, switch_(u)ser, (s)uspend, (h)ibernate, (r)eboot, (Shift+s)hutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit lock, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym u exec --no-startup-id i3exit switch_user, mode "default"
-    bindsym e exec --no-startup-id i3exit logout, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id ~/bin/i3exit lock, mode "default"
+    bindsym s exec --no-startup-id ~/bin/i3exit suspend, mode "default"
+    bindsym u exec --no-startup-id ~/bin/i3exit switch_user, mode "default"
+    bindsym e exec --no-startup-id ~/bin/i3exit logout, mode "default"
+    bindsym h exec --no-startup-id ~/bin/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/bin/i3exit reboot, mode "default"
+    bindsym Shift+s exec --no-startup-id ~/bin/i3exit shutdown, mode "default"
 
     # exit system mode: "Enter" or "Escape"
     bindsym Return mode "default"
@@ -251,18 +251,17 @@ mode "resize" {
 
 # Autostart applications
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id blueman-applet
 exec --no-startup-id clipit
-exec --no-startup-id conky -c /usr/share/conky/conky_maia
 exec --no-startup-id udiskie --tray
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 exec --no-startup-id jetbrains-toolbox --minimize
 exec --no-startup-id setxkbmap -layout us -variant intl
 exec --no-startup-id /home/mj/.screenlayout/triple.sh
+exec --no-startup-id nitrogen --restore; sleep 1; compton -b
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
@@ -299,9 +298,9 @@ set_from_resource $term_color15    color15
 bar {
 	i3bar_command i3bar
 	status_command ~/bin/bumblebee-status \
-    -m network_traffic nic pacman cpu memory disk:ssd battery datetime \
-    -p interval=2 pacman.sum="True" ssd.format="SSD {left} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M" memory.format="{used} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
-    -t onedark-powerline
+    -m nic pacman cpu memory disk:ssd battery datetime \
+    -p interval=2 pacman.sum="True" ssd.format="SSD {left}/{size} ({percent:05.02f}%)" datetime.format="%a. %d.%m.%G %H:%M" memory.format="{used}/{total} ({percent:05.02f}%)" nic.format="{ip} {ssid}" nic.states="^down" \
+    -t ~/dot/i3/matthjes.json
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
@@ -314,7 +313,7 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #161821
+        background #111e2f
         statusline #F9FAF9
         separator  #454947
 
