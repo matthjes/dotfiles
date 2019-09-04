@@ -1,6 +1,8 @@
 set hlsearch
 set clipboard += unnamed
 set number
+set commentary
+set surround
 " set relativenumber
 
 nnoremap yy "+yy
@@ -19,3 +21,7 @@ let mapleader = ","
 imap jk <Esc>
 
 noremap <Space> <PageDown>
+
+map <Leader>r :action ChooseRunConfiguration<CR>
+map <Leader>v :action Vcs.QuickListPopupAction<CR>
+map <Leader>f :action ReformatCode<CR>
