@@ -33,3 +33,5 @@
 
 [http "https://cnap-git.bmwgroup.net"]
 	sslCAInfo = /home/mj/.certs/bmw.crt
+[core]
+	autocrlf = input
