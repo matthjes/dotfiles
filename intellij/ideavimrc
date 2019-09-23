@@ -109,6 +109,8 @@ nmap <leader>cf      :action ReformatCode<CR>
 vmap <leader>cf      :<Backspace><Backspace><Backspace><Backspace><Backspace>action ReformatCode<CR>
 nmap <leader>cg      :action Generate<CR>
 vmap <leader>cg      :<Backspace><Backspace><Backspace><Backspace><Backspace>action Generate<CR>
+nmap <leader>co      :action OptimizeImports<CR>
+vmap <leader>co      :<Backspace><Backspace><Backspace><Backspace><Backspace>action OptimizeImports<CR>
 nmap <leader>rR      :action RunClass<CR>
 vmap <leader>rR      :<Backspace><Backspace><Backspace><Backspace><Backspace>action RunClass<CR>
 nmap <leader>rr      :action ChooseRunConfiguration<CR>
@@ -123,8 +125,8 @@ nmap gR              :action Resume<CR>
 vmap gR              :<Backspace><Backspace><Backspace><Backspace><Backspace>action Resume<CR>
 nmap gd              :action GotoDeclaration<CR>
 vmap gd              :<Backspace><Backspace><Backspace><Backspace><Backspace>action GotoDeclaration<CR>
-vmap gD              :<Backspace><Backspace><Backspace><Backspace><Backspace>action FindUsages<CR>
-nmap gD              :action FindUsages<CR>
+vmap gu              :<Backspace><Backspace><Backspace><Backspace><Backspace>action FindUsages<CR>
+nmap gu              :action FindUsages<CR>
 nmap gi              :action StepInto<CR>
 vmap gi              :<Backspace><Backspace><Backspace><Backspace><Backspace>action StepInto<CR>
 nmap go              :action StepOut<CR>
